@@ -1,0 +1,269 @@
+{
+  "splits": {
+    "val_start": "2023-05-11",
+    "check_start": "2023-07-06",
+    "test_start": "2023-08-03",
+    "test_end": "2023-09-27"
+  },
+  "n_series": 36,
+  "calibration_checks": [
+    {
+      "coverage": 0.9027777777777778,
+      "nominal": 0.9,
+      "interval_scale": 1.0
+    }
+  ],
+  "interval_scale": 1.0,
+  "critic": {
+    "flagged_share": 0.30753968253968256,
+    "mean_abs_error_flagged": 1.4273879468883977,
+    "mean_abs_error_unflagged": 0.9864635979711046,
+    "error_ratio_flagged_vs_unflagged": 1.4469747792256684,
+    "precision": 0.5241935483870968,
+    "recall": 0.8269720101781171
+  },
+  "forecaster": {
+    "choice": "gbm",
+    "blend_weight": 0.8,
+    "scores": {
+      "gbm": 0.27939352091414144,
+      "blend": 0.2770434578429885,
+      "seasonal_naive": 0.43725172870383994,
+      "ets": 0.3230157545189178
+    }
+  },
+  "psum_calibration": {
+    "P": 3,
+    "kappa": 1.0697036979045624,
+    "z_std_raw": 1.580406493221563,
+    "z_std_after_inflation": 1.4774245394471515,
+    "coverage_90_raw": 0.7942386831275721,
+    "coverage_90_after_inflation": 0.823559670781893
+  },
+  "risk_weights": {
+    "event": {
+      "prior": 0.25,
+      "observed": 0.1448879026948322,
+      "n": 72,
+      "weight": 0.20599958717458094
+    },
+    "weather": {
+      "prior": 0.35,
+      "observed": 0.166309646739784,
+      "n": 45,
+      "weight": 0.2929926489882088
+    },
+    "price": {
+      "prior": 0.2,
+      "observed": 0.0,
+      "n": 15,
+      "weight": 0.17391304347826086
+    },
+    "drift": {
+      "prior": 1.25,
+      "observed": 0.047302619314034296,
+      "n": 1306,
+      "weight": 0.1328429735591243
+    }
+  },
+  "unit_label": "units",
+  "psum_inflation": 1.0697036979045624,
+  "forecast_metrics": [
+    {
+      "model": "agentic_forecast",
+      "segment": "all",
+      "n": 2016,
+      "wape": 0.31807917143909586,
+      "rmse": 6.773657777352139,
+      "bias": -0.049340204142584394
+    },
+    {
+      "model": "agentic_forecast",
+      "segment": "shock_days",
+      "n": 393,
+      "wape": 0.3356791567631585,
+      "rmse": 11.893988505758378,
+      "bias": -0.26415463715671617
+    },
+    {
+      "model": "agentic_forecast",
+      "segment": "normal_days",
+      "n": 1623,
+      "wape": 0.30954108617061865,
+      "rmse": 4.768354434446849,
+      "bias": 0.054870334230232354
+    },
+    {
+      "model": "gbm_only",
+      "segment": "all",
+      "n": 2016,
+      "wape": 0.31807917143909586,
+      "rmse": 6.773657777352139,
+      "bias": -0.049340204142584394
+    },
+    {
+      "model": "gbm_only",
+      "segment": "shock_days",
+      "n": 393,
+      "wape": 0.3356791567631585,
+      "rmse": 11.893988505758378,
+      "bias": -0.26415463715671617
+    },
+    {
+      "model": "gbm_only",
+      "segment": "normal_days",
+      "n": 1623,
+      "wape": 0.30954108617061865,
+      "rmse": 4.768354434446849,
+      "bias": 0.054870334230232354
+    },
+    {
+      "model": "seasonal_naive",
+      "segment": "all",
+      "n": 2016,
+      "wape": 0.5280454295658545,
+      "rmse": 11.196544074237783,
+      "bias": 0.012932771569884594
+    },
+    {
+      "model": "seasonal_naive",
+      "segment": "shock_days",
+      "n": 393,
+      "wape": 0.531516375056079,
+      "rmse": 17.61801356667724,
+      "bias": -0.2724315836698071
+    },
+    {
+      "model": "seasonal_naive",
+      "segment": "normal_days",
+      "n": 1623,
+      "wape": 0.5263616083573643,
+      "rmse": 8.975423416659401,
+      "bias": 0.15136840959791065
+    },
+    {
+      "model": "ets",
+      "segment": "all",
+      "n": 2016,
+      "wape": 0.3987271090577887,
+      "rmse": 8.736690108654061,
+      "bias": -0.018158441712015996
+    },
+    {
+      "model": "ets",
+      "segment": "shock_days",
+      "n": 393,
+      "wape": 0.4557636381194485,
+      "rmse": 15.677708264035044,
+      "bias": -0.3549047549296372
+    },
+    {
+      "model": "ets",
+      "segment": "normal_days",
+      "n": 1623,
+      "wape": 0.37105761163607054,
+      "rmse": 5.941027882512833,
+      "bias": 0.14520355451456382
+    }
+  ],
+  "interval_metrics": [
+    {
+      "segment": "all",
+      "n": 2016,
+      "coverage": 0.8839285714285714,
+      "mean_width": 17.344631995895803
+    },
+    {
+      "segment": "shock_days",
+      "n": 393,
+      "coverage": 0.7531806615776081,
+      "mean_width": 21.858992474375817
+    },
+    {
+      "segment": "normal_days",
+      "n": 1623,
+      "coverage": 0.9155884165126309,
+      "mean_width": 16.25150589112523
+    },
+    {
+      "segment": "shock:event",
+      "n": 117,
+      "coverage": 0.8290598290598291,
+      "mean_width": 25.090424673057413
+    },
+    {
+      "segment": "shock:heatwave",
+      "n": 150,
+      "coverage": 0.8133333333333334,
+      "mean_width": 22.077343240640577
+    },
+    {
+      "segment": "shock:surge",
+      "n": 126,
+      "coverage": 0.6111111111111112,
+      "mean_width": 18.5984354729039
+    }
+  ],
+  "inventory_summary": [
+    {
+      "policy": "classical_ets",
+      "fill_rate": 0.9114181146433605,
+      "stockout_rate": 0.12003968253968254,
+      "lost_units": 2417.8425608094735,
+      "avg_on_hand_units": 16.93332455591756,
+      "n_orders": 1977.0,
+      "holding_cost": 251.37800028820138,
+      "stockout_cost": 13079.823346397385,
+      "order_cost": 0.0,
+      "total_cost": 13331.201346685586
+    },
+    {
+      "policy": "gbm_static",
+      "fill_rate": 0.9459825626602546,
+      "stockout_rate": 0.08779761904761904,
+      "lost_units": 1474.40595218835,
+      "avg_on_hand_units": 14.091692969938018,
+      "n_orders": 1977.0,
+      "holding_cost": 208.51760934376298,
+      "stockout_cost": 8004.98415321112,
+      "order_cost": 0.0,
+      "total_cost": 8213.501762554883
+    },
+    {
+      "policy": "gbm_calibrated",
+      "fill_rate": 0.9491812501217811,
+      "stockout_rate": 0.08283730158730158,
+      "lost_units": 1387.0977779259865,
+      "avg_on_hand_units": 14.673056306717111,
+      "n_orders": 1955.0,
+      "holding_cost": 217.90040119400513,
+      "stockout_cost": 7469.162394284483,
+      "order_cost": 0.0,
+      "total_cost": 7687.062795478488
+    },
+    {
+      "policy": "agentic_risk",
+      "fill_rate": 0.9571676957083075,
+      "stockout_rate": 0.06845238095238096,
+      "lost_units": 1169.1077456417465,
+      "avg_on_hand_units": 15.49446749129114,
+      "n_orders": 1949.0,
+      "holding_cost": 229.8169638196357,
+      "stockout_cost": 6342.437226870687,
+      "order_cost": 0.0,
+      "total_cost": 6572.2541906903225
+    },
+    {
+      "policy": "agentic",
+      "fill_rate": 0.9652389750068712,
+      "stockout_rate": 0.057539682539682536,
+      "lost_units": 948.8021771874508,
+      "avg_on_hand_units": 16.738835655047808,
+      "n_orders": 1910.0,
+      "holding_cost": 248.59922885816985,
+      "stockout_cost": 5187.707930211067,
+      "order_cost": 0.0,
+      "total_cost": 5436.307159069237
+    }
+  ]
+}

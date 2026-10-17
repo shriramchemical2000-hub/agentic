@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+scikit-learn
+statsmodels
+pyyaml
+streamlit>=1.50
+plotly
+matplotlib
+pytest
+# optional: LLM-written rationales (set llm.enabled: true in config)
+anthropic
+# optional: pip install lightgbm  (forecast.model.type: lightgbm)
